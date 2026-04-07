@@ -6,7 +6,7 @@
  * 2. You can find this in your AdSense dashboard under Account -> Settings -> Account Information.
  */
 export const AD_CONFIG = {
-  publisherId: "ca-pub-656530984068345", // REPLACE THIS
+  publisherId: "ca-pub-1656530984068345", // REPLACE THIS
   slots: {
     topHeader: "2745096375", // Example slot ID
     midSection: "0987654321", // Example slot ID
