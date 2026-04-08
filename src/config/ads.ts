@@ -9,9 +9,9 @@ export const AD_CONFIG = {
   publisherId: "ca-pub-1656530984068345", // REPLACE THIS
   slots: {
     topHeader: "2745096375", // Example slot ID
-    midSection: "0987654321", // Example slot ID
-    bottomFooter: "1357924680", // Example slot ID
-    newsTop: "2468013579", // Example slot ID
+    midSection: "5242839576", // Example slot ID
+    bottomFooter: "8004734283", // Example slot ID
+    newsTop: "3199761058", // Example slot ID
   }
 };
 
