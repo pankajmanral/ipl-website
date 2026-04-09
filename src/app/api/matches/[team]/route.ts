@@ -3,9 +3,10 @@ import matchesData from '@/data/predictions.json';
 
 export async function GET(
   request: Request,
-  { params }: { params: { team: string } }
+  { params }: { params: Promise<{ team: string }> }
 ) {
-  const team = params.team.replace(/-/g, ' ').toLowerCase();
+  const { team: teamParam } = await params;
+  const team = teamParam.replace(/-/g, ' ').toLowerCase();
 
   const filtered = matchesData.matches.filter(
     (m: any) => 
