@@ -10,50 +10,78 @@ interface PointsTableProps {
 
 export function PointsTable({ data }: PointsTableProps) {
   return (
-    <div className="glass-card overflow-hidden">
-      <div className="p-4">
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
-          {data.map((row, idx) => (
-            <motion.div 
-              key={row.team}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.05 }}
-              className={cn(
-                "glass-card p-4 relative border border-white/5 hover:border-blue-500/30 transition-all group overflow-hidden",
-                idx < 4 ? "bg-blue-600/[0.03]" : ""
-              )}
-            >
-              <div className="absolute top-1 right-2 text-[8px] font-black italic text-slate-700">#{idx + 1}</div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-[10px] font-black uppercase tracking-tight px-1.5 py-0.5 rounded shadow-sm shrink-0"
-                      style={{ backgroundColor: TEAM_COLORS[row.team]?.primary || "#888", color: TEAM_COLORS[row.team]?.text || "#fff" }}>
-                  {TEAM_ABBREVIATIONS[row.team]}
-                </span>
-                <span className="font-extrabold text-[11px] text-slate-300 truncate group-hover:text-white transition-colors">{row.team}</span>
-              </div>
-              
-              <div className="flex justify-between items-center gap-1">
-                <div className="flex flex-col">
-                  <span className="text-[8px] text-slate-500 uppercase font-black tracking-widest">W/L</span>
-                  <span className="text-xs font-bold text-slate-200">{row.won}/{row.lost}</span>
-                </div>
-                <div className="w-px h-6 bg-white/5"></div>
-                <div className="flex flex-col text-center">
-                  <span className="text-[8px] text-slate-500 uppercase font-black tracking-widest">NRR</span>
-                  <span className={cn("text-xs font-mono font-bold", row.nrr >= 0 ? "text-emerald-400" : "text-rose-400")}>
-                    {row.nrr > 0 ? "+" : ""}{row.nrr.toFixed(2)}
+    <div className="glass-card overflow-hidden border border-white/5 shadow-2xl">
+      <div className="overflow-x-auto custom-scrollbar">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="bg-slate-900/50 border-b border-white/5">
+              <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Pos</th>
+              <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Team</th>
+              <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 text-center">PL</th>
+              <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 text-center">W</th>
+              <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 text-center">L</th>
+              <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 text-center">PTS</th>
+              <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 text-right">NRR</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-white/[0.03]">
+            {data.map((row, idx) => (
+              <motion.tr 
+                key={row.team}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.05 }}
+                className={cn(
+                  "group hover:bg-blue-600/[0.03] transition-colors relative",
+                  idx < 4 ? "bg-blue-600/[0.01]" : ""
+                )}
+              >
+                <td className="px-6 py-5">
+                  <span className={cn(
+                    "w-6 h-6 flex items-center justify-center rounded-lg text-[10px] font-black italic",
+                    idx < 4 ? "bg-blue-600/20 text-blue-400" : "bg-slate-800 text-slate-500"
+                  )}>
+                    {idx + 1}
                   </span>
-                </div>
-                <div className="w-px h-6 bg-white/5"></div>
-                <div className="flex flex-col text-right">
-                  <span className="text-[8px] text-blue-500 uppercase font-black tracking-widest">PTS</span>
-                  <span className="text-sm font-black text-blue-400 leading-none">{row.points}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                </td>
+                <td className="px-6 py-5">
+                  <div className="flex items-center gap-4">
+                    <span className="w-8 h-8 flex items-center justify-center rounded text-[10px] font-black uppercase tracking-tighter shrink-0 shadow-lg"
+                          style={{ backgroundColor: TEAM_COLORS[row.team]?.primary || "#888", color: TEAM_COLORS[row.team]?.text || "#fff" }}>
+                      {TEAM_ABBREVIATIONS[row.team]}
+                    </span>
+                    <span className="font-bold text-sm text-slate-200 group-hover:text-white transition-colors">{row.team}</span>
+                  </div>
+                </td>
+                <td className="px-6 py-5 text-center font-bold text-sm text-slate-400">{row.played}</td>
+                <td className="px-6 py-5 text-center font-bold text-sm text-slate-200">{row.won}</td>
+                <td className="px-6 py-5 text-center font-bold text-sm text-slate-200">{row.lost}</td>
+                <td className="px-6 py-5 text-center">
+                  <span className="text-base font-black text-blue-400">{row.points}</span>
+                </td>
+                <td className="px-6 py-5 text-right font-mono text-sm font-bold">
+                  <span className={cn(row.nrr >= 0 ? "text-emerald-400" : "text-rose-400")}>
+                    {row.nrr > 0 ? "+" : ""}{row.nrr.toFixed(3)}
+                  </span>
+                </td>
+              </motion.tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <div className="p-4 bg-slate-900/30 flex items-center justify-between border-t border-white/5">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Qualifier Spot</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-slate-800"></div>
+            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Eliminated</span>
+          </div>
         </div>
+        <p className="text-[10px] text-slate-600 font-medium italic">Data synced from IPL Global Feed • Last updated 2 mins ago</p>
       </div>
     </div>
   );

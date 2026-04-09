@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { RefreshCw, LayoutGrid, List as ListIcon, TrendingUp, Sparkles, Newspaper } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const NEWS_RSS_URL = "https://www.espncricinfo.com/rss/content/story/feeds/0.xml";
+const NEWS_RSS_URL = "https://news.google.com/rss/search?q=IPL+2026&hl=en-IN&gl=IN&ceid=IN:en";
 const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(NEWS_RSS_URL)}`;
 
 export default function NewsPage() {
@@ -23,7 +23,13 @@ export default function NewsPage() {
       const response = await fetch(API_URL);
       const data = await response.json();
       if (data.status === "ok") {
-        setNews(data.items);
+        // Filter out non-IPL news to ensure 100% data relevance
+        const iplNews = data.items.filter((item: any) => 
+          item.title.toLowerCase().includes("ipl") || 
+          item.title.toLowerCase().includes("indian premier league") ||
+          item.description.toLowerCase().includes("ipl")
+        );
+        setNews(iplNews);
         setError(false);
       } else {
         setError(true);

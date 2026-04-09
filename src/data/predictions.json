@@ -1,12 +1,12 @@
 {
   "generated_at": "2026-04-07",
-  "model_accuracy": 70.6,
+  "model_accuracy": 76.9,
   "rf_accuracy": 71.3,
   "gb_accuracy": 66.2,
   "lr_accuracy": 74.4,
-  "acc_on_2026": 75.0,
-  "correct_on_2026": 9,
-  "total_completed": 12,
+  "acc_on_2026": 76.9,
+  "correct_on_2026": 10,
+  "total_completed": 13,
   "historical_matches": 975,
   "points_table": [
     {
@@ -27,11 +27,11 @@
     },
     {
       "team": "Rajasthan Royals",
-      "played": 2,
-      "won": 2,
+      "played": 3,
+      "won": 3,
       "lost": 0,
-      "points": 4,
-      "nrr": 2.233
+      "points": 6,
+      "nrr": 2.45
     },
     {
       "team": "Delhi Capitals",
@@ -51,11 +51,11 @@
     },
     {
       "team": "Mumbai Indians",
-      "played": 2,
+      "played": 3,
       "won": 1,
-      "lost": 1,
+      "lost": 2,
       "points": 2,
-      "nrr": -0.206
+      "nrr": -0.45
     },
     {
       "team": "Lucknow Super Giants",
@@ -92,6 +92,13 @@
   ],
   "top_batters": [
     {
+      "team": "Rajasthan Royals",
+      "runs": 214,
+      "matches": 3,
+      "sr": 164,
+      "name": "Yashasvi Jaiswal"
+    },
+    {
       "team": "Delhi Capitals",
       "runs": 160,
       "matches": 3,
@@ -118,16 +125,16 @@
       "matches": 2,
       "sr": 168,
       "name": "Heinrich Klaasen"
-    },
-    {
-      "team": "Sunrisers Hyderabad",
-      "runs": 115,
-      "matches": 2,
-      "sr": 155,
-      "name": "Nitish Reddy"
     }
   ],
   "top_bowlers": [
+    {
+      "team": "Lucknow Super Giants",
+      "wickets": 8,
+      "matches": 3,
+      "eco": 6.8,
+      "name": "Ravi Bishnoi"
+    },
     {
       "team": "Punjab Kings",
       "wickets": 6,
@@ -150,13 +157,6 @@
       "name": "Varun C"
     },
     {
-      "team": "Rajasthan Royals",
-      "wickets": 5,
-      "matches": 3,
-      "eco": 7.2,
-      "name": "Ravi Bishnoi"
-    },
-    {
       "team": "Mumbai Indians",
       "wickets": 4,
       "matches": 2,
@@ -166,6 +166,7 @@
   ],
   "squads": {
     "Royal Challengers Bengaluru": {
+      "rapid_id": 4,
       "captain": "Rajat Patidar",
       "key_batters": [
         "Virat Kohli",
@@ -195,6 +196,7 @@
       "squad_strength": 8.5
     },
     "Sunrisers Hyderabad": {
+      "rapid_id": 8,
       "captain": "Pat Cummins",
       "key_batters": [
         "Heinrich Klaasen",
@@ -224,6 +226,7 @@
       "squad_strength": 9.1
     },
     "Mumbai Indians": {
+      "rapid_id": 2,
       "captain": "Hardik Pandya",
       "key_batters": [
         "Rohit Sharma",
@@ -254,6 +257,7 @@
       "squad_strength": 9.2
     },
     "Kolkata Knight Riders": {
+      "rapid_id": 3,
       "captain": "Ajinkya Rahane",
       "key_batters": [
         "Rinku Singh",
@@ -283,6 +287,7 @@
       "squad_strength": 8.7
     },
     "Rajasthan Royals": {
+      "rapid_id": 5,
       "captain": "Riyan Parag",
       "key_batters": [
         "Yashasvi Jaiswal",
@@ -294,9 +299,9 @@
       "key_bowlers": [
         "Ravindra Jadeja",
         "Jofra Archer",
-        "Ravi Bishnoi",
         "Sandeep Sharma",
-        "Nandre Burger"
+        "Nandre Burger",
+        "Prasidh Krishna"
       ],
       "star_players": [
         "Yashasvi Jaiswal",
@@ -312,6 +317,7 @@
       "squad_strength": 9.0
     },
     "Chennai Super Kings": {
+      "rapid_id": 1,
       "captain": "Ruturaj Gaikwad",
       "key_batters": [
         "Ruturaj Gaikwad",
@@ -342,6 +348,7 @@
       "squad_strength": 8.8
     },
     "Punjab Kings": {
+      "rapid_id": 6,
       "captain": "Shreyas Iyer",
       "key_batters": [
         "Shreyas Iyer",
@@ -371,6 +378,7 @@
       "squad_strength": 8.8
     },
     "Gujarat Titans": {
+      "rapid_id": 10,
       "captain": "Shubman Gill",
       "key_batters": [
         "Shubman Gill",
@@ -400,6 +408,7 @@
       "squad_strength": 9.2
     },
     "Lucknow Super Giants": {
+      "rapid_id": 9,
       "captain": "Rishabh Pant",
       "key_batters": [
         "Rishabh Pant",
@@ -429,6 +438,7 @@
       "squad_strength": 9.0
     },
     "Delhi Capitals": {
+      "rapid_id": 7,
       "captain": "Axar Patel",
       "key_batters": [
         "KL Rahul",
@@ -474,6 +484,9 @@
       "away_win_prob": 22.2,
       "is_completed": true,
       "is_today": false,
+      "home_score": "203/4",
+      "away_score": "201/9",
+      "status": "RCB won by 6 wickets",
       "live_score": null,
       "actual_winner": "Royal Challengers Bengaluru",
       "prediction_correct": true,
@@ -523,6 +536,9 @@
       "away_win_prob": 1.0,
       "is_completed": true,
       "is_today": false,
+      "home_score": "224/4",
+      "away_score": "220/4",
+      "status": "MI won by 6 wickets",
       "live_score": null,
       "actual_winner": "Mumbai Indians",
       "prediction_correct": true,
@@ -573,6 +589,9 @@
       "away_win_prob": 1.0,
       "is_completed": true,
       "is_today": false,
+      "home_score": "128/2",
+      "away_score": "127/10",
+      "status": "RR won by 8 wickets",
       "live_score": null,
       "actual_winner": "Rajasthan Royals",
       "prediction_correct": true,
@@ -622,6 +641,9 @@
       "away_win_prob": 19.8,
       "is_completed": true,
       "is_today": false,
+      "home_score": "165/7",
+      "away_score": "162/6",
+      "status": "PBKS won by 3 wickets",
       "live_score": null,
       "actual_winner": "Punjab Kings",
       "prediction_correct": true,
@@ -671,6 +693,9 @@
       "away_win_prob": 68.9,
       "is_completed": true,
       "is_today": false,
+      "home_score": "141/10",
+      "away_score": "145/4",
+      "status": "DC won by 6 wickets",
       "live_score": null,
       "actual_winner": "Delhi Capitals",
       "prediction_correct": true,
@@ -720,6 +745,9 @@
       "away_win_prob": 46.4,
       "is_completed": true,
       "is_today": false,
+      "home_score": "161/10",
+      "away_score": "226/8",
+      "status": "SRH won by 65 runs",
       "live_score": null,
       "actual_winner": "Sunrisers Hyderabad",
       "prediction_correct": false,
@@ -769,6 +797,9 @@
       "away_win_prob": 48.7,
       "is_completed": true,
       "is_today": false,
+      "home_score": "209/5",
+      "away_score": "210/5",
+      "status": "PBKS won by 5 wickets",
       "live_score": null,
       "actual_winner": "Punjab Kings",
       "prediction_correct": false,
@@ -818,6 +849,9 @@
       "away_win_prob": 16.7,
       "is_completed": true,
       "is_today": false,
+      "home_score": "164/4",
+      "away_score": "162/6",
+      "status": "DC won by 6 wickets",
       "live_score": null,
       "actual_winner": "Delhi Capitals",
       "prediction_correct": true,
@@ -868,6 +902,9 @@
       "away_win_prob": 67.8,
       "is_completed": true,
       "is_today": false,
+      "home_score": "204/8",
+      "away_score": "210/6",
+      "status": "RR won by 6 runs",
       "live_score": null,
       "actual_winner": "Rajasthan Royals",
       "prediction_correct": true,
@@ -917,6 +954,9 @@
       "away_win_prob": 60.6,
       "is_completed": true,
       "is_today": false,
+      "home_score": "156/9",
+      "away_score": "160/5",
+      "status": "LSG won by 5 wickets",
       "live_score": null,
       "actual_winner": "Lucknow Super Giants",
       "prediction_correct": true,
@@ -966,6 +1006,9 @@
       "away_win_prob": 11.3,
       "is_completed": true,
       "is_today": false,
+      "home_score": "250/3",
+      "away_score": "207/10",
+      "status": "RCB won by 43 runs",
       "live_score": null,
       "actual_winner": "Royal Challengers Bengaluru",
       "prediction_correct": true,
@@ -1015,6 +1058,9 @@
       "away_win_prob": 67.9,
       "is_completed": true,
       "is_today": false,
+      "home_score": "25/2",
+      "away_score": "N/A",
+      "status": "No result (Rain)",
       "live_score": null,
       "actual_winner": "None",
       "prediction_correct": false,
@@ -1062,23 +1108,26 @@
       "confidence": 74.5,
       "home_win_prob": 74.5,
       "away_win_prob": 25.5,
-      "is_completed": false,
-      "is_today": true,
+      "is_completed": true,
+      "is_today": false,
+      "home_score": "150/3",
+      "away_score": "123/9",
+      "status": "RR won by 27 runs",
       "live_score": null,
-      "actual_winner": null,
-      "prediction_correct": null,
+      "actual_winner": "Rajasthan Royals",
+      "prediction_correct": true,
       "home_form_display": 70.3,
       "away_form_display": 50.0,
-      "home_2026_wins": 2,
+      "home_2026_wins": 3,
       "away_2026_wins": 1,
-      "home_2026_played": 2,
-      "away_2026_played": 2,
-      "home_nrr": 2.233,
-      "away_nrr": -0.206,
+      "home_2026_played": 3,
+      "away_2026_played": 3,
+      "home_nrr": 2.45,
+      "away_nrr": -0.45,
       "home_squad_str": 9.0,
       "away_squad_str": 9.2,
       "home_momentum": 100.0,
-      "away_momentum": 50.0,
+      "away_momentum": 33.3,
       "h2h_matches": 30,
       "h2h_home_wr": 46.7,
       "home_overall_wr": 48.4,
